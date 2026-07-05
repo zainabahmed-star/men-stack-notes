@@ -37,3 +37,7 @@ Run the server with `nodeman server.js`
 
 <img width="467" height="126" alt="Screenshot 2026-07-05 at 11 23 14 AM" src="https://github.com/user-attachments/assets/f1badb10-c67c-414d-9046-7b71e14cf424" />
 
+navigate to `http://localhost:3000/` to view our server.
+
+use `ctrl + c` to stop the server in the terminal.
+
