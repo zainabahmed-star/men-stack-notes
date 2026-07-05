@@ -41,3 +41,10 @@ navigate to `http://localhost:3000/` to view our server.
 
 use `ctrl + c` to stop the server in the terminal.
 
+### Creating a Test Route 
+
+```js
+app.get('/test', function(req, res){
+    res.send('<h1>This is a test</h1>')
+})
+```
