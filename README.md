@@ -48,3 +48,6 @@ app.get('/test', function(req, res){
     res.send('<h1>This is a test</h1>')
 })
 ```
+<img width="341" height="126" alt="Screenshot 2026-07-05 at 12 30 47 PM" src="https://github.com/user-attachments/assets/eebef3a2-cc12-4369-bd3a-692e674dad8a" />
+
+navigate to http://localhost:3000/test 
