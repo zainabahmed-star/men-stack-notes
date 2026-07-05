@@ -50,4 +50,16 @@ app.get('/test', function(req, res){
 ```
 <img width="341" height="126" alt="Screenshot 2026-07-05 at 12 30 47 PM" src="https://github.com/user-attachments/assets/eebef3a2-cc12-4369-bd3a-692e674dad8a" />
 
-navigate to http://localhost:3000/test 
+navigate to http://localhost:3000/test
+
+### Using Request Parameters
+
+```js
+app.get('/:userId', function(req, res){
+    res.send(`User ID: ${req.params.userId}`)
+    console.log(req.params.userId)
+})
+```
+Navigate to http://localhost:3000/2490
+
+<img width="341" height="126" alt="Screenshot 2026-07-05 at 2 11 50 PM" src="https://github.com/user-attachments/assets/e664f348-c2bf-41b9-8d7c-79c6812e4682" />
