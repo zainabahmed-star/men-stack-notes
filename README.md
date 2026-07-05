@@ -17,15 +17,19 @@
 - initialise a node project with `npm init -y`
 - install express `npm i express`
 
+- install express and morgan `npm i express morgan`
+
 ### Write Server Boilerplate
 
 server.js
 ```js
 // bring express into our server
 const express = require('express')
+const morgan = require('morgan')
 
 //actually use express 
 const app = express()
+app.use(morgan('dev'))
 
 app.listen(3000, function(){
     console.log('listening to port 3000')
@@ -63,3 +67,4 @@ app.get('/:userId', function(req, res){
 Navigate to http://localhost:3000/2490
 
 <img width="341" height="126" alt="Screenshot 2026-07-05 at 2 11 50 PM" src="https://github.com/user-attachments/assets/e664f348-c2bf-41b9-8d7c-79c6812e4682" />
+
