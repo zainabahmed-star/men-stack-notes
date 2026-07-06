@@ -117,3 +117,27 @@ Navigate to http://localhost:3000/2490
 ```ejs
 <%= user %>
 ```
+
+### Pass data from the controller 
+- Use the locals objects inside the render method:
+```js
+res.render('home.ejs', {
+    title : 'Home Page',
+    )}
+```
+
+Now i can use the `title` varibale in my `home.ejs` file.
+home.ejs 
+```js
+<h1><%=title%></h1>
+```
+
+### Using For Each in `ejs`
+
+```js
+<ul>
+        <% inventory.forEach(function(item){ %>
+          <li> <%= item.name %>: <%= item.qty %> </li>
+        <% }) %> 
+    </ul>
+```
