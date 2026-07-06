@@ -107,3 +107,13 @@ Navigate to http://localhost:3000/2490
 })
   ```
 <img width="713" height="267" alt="Screenshot 2026-07-06 at 12 40 11 PM" src="https://github.com/user-attachments/assets/c48d7f9a-f78c-4911-8f00-1e1811477a01" />
+
+### EJS Syntax
+- to use javascript in an ejs file, I need a scriplet tag:
+```ejs
+<% let user = 'Jo' %>
+```
+- to display javascript values from an ejs file, I need an output tag:
+```ejs
+<%= user %>
+```
