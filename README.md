@@ -74,3 +74,36 @@ Navigate to http://localhost:3000/2490
 
 <img width="341" height="126" alt="Screenshot 2026-07-05 at 2 11 50 PM" src="https://github.com/user-attachments/assets/e664f348-c2bf-41b9-8d7c-79c6812e4682" />
 
+## Rendering EJS
+
+- install ejs `npm i ejs`
+- create a view folder `mkdir views`
+- create an ejs file `touch views/home.ejs`
+- add html boilderplate with `!`
+
+  ### home.ejs
+  
+ 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+  <h1>We are rendering an EJS page!</h1>
+</body>
+</html>
+```
+
+
+  - render `ejs` page using a controller like this one:
+ 
+  ``` js
+  app.get('/', function(req, res){
+    res.render('home.ejs')
+})
+  ```
+<img width="713" height="267" alt="Screenshot 2026-07-06 at 12 40 11 PM" src="https://github.com/user-attachments/assets/c48d7f9a-f78c-4911-8f00-1e1811477a01" />
