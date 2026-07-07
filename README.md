@@ -143,7 +143,7 @@ home.ejs
 ```
 ### Pass data from the controller
 Use the locals object inside the render method:
-```js
+```ejs
 res.render('home.ejs', {
     title: 'Home Page',
 })
@@ -151,7 +151,7 @@ res.render('home.ejs', {
 Now I can use the title variable in my home.ejs file.
 
 home.ejs
-```js
+```ejs
 <h1><%= title %></h1>
 Using forEach in ejs
 <ul>
@@ -162,3 +162,9 @@ Using forEach in ejs
 ```
 <img width="581" height="278" alt="Screenshot 2026-07-07 at 10 01 56 AM" src="https://github.com/user-attachments/assets/40c93ee8-4c1d-402a-86c6-9f1b13326639" />
 
+### Create Dynamic links to a `show` page
+`item.name` is dynamically showing up, The link is also dynamically changing with the item. (see `forEach` above).
+```ejs
+<a href="/<%= item.id %>"> <%= item.name %> </a>
+```
+We should see the URL change in the browser. 
