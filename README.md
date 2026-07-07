@@ -160,4 +160,5 @@ Using forEach in ejs
     <% }) %>
 </ul>
 ```
-Screenshot 2026-07-06 at 2 59 14 PM
+<img width="581" height="278" alt="Screenshot 2026-07-07 at 10 01 56 AM" src="https://github.com/user-attachments/assets/40c93ee8-4c1d-402a-86c6-9f1b13326639" />
+
