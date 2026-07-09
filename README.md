@@ -220,3 +220,45 @@ app.use(express.static(path.join(__dirname, "public")))
 ### Images
 - Create an `images` folder inside of our `public` folder
 - link the images like normal: <img src="/images/pexels-i-slam-abruev-2157269750-37959543.jpg" alt="">
+
+### The repeatable pattern
+Most Express apps that use MongoDB will follow this pattern:
+
+- Install mongoose and dotenv.
+- Store the connection string in .env.
+- Add .env to .gitignore.
+- Load dotenv in server.js.
+- Import mongoose.
+- Connect with mongoose.connect(process.env.MONGODB_URI).
+👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼They are below👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼 
+##link database
+###Install mongoose and dotenv from NPM 
+`npm i mongoose dotenv`
+
+### create an `.env` file 
+- we add it to .gitignore under `node_modules`
+- `.env` file is to store values without pushing it to github
+For example
+```js
+SECRET_NUMBER=13
+PASSWORD=12345
+```
+- we put `MONGODB_URI=` in `.env`
+- the URL always goes between the `/` and `?` For example `mongodb.net/example_db?appName`
+
+### Inlcude dotenv & mongoose in `server.js`
+```js
+const dotenv = require('dotenv').config() // making .env file available
+const mongoose = require('mongoose')
+```
+- Connect us to MongoDB using connection string in `.env`
+```js
+mongoose.connect(process.env.MONGODB_URI)
+```
+- Make sure mongoose connection is running by adding this to server.js
+`server.js`
+```js
+mongoose.connection.on("connected", () => {
+  console.log(`Connected to MongoDB ${mongoose.connection.name} 🥭`);
+});
+```
