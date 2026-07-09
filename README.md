@@ -265,3 +265,37 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name} 🥭`);
 });
 ```
+
+### How to build a model 
+
+- we have to add mongoose at the top of our `exmaple.js` folder
+```js
+const mongoose = require('mongoose')
+```
+- creating it
+example:
+```js
+const fruitSchema = new mongoose.Schema({
+    name: String,
+    isReadyToEat: Boolean, 
+})
+
+
+// create a model to be used in other parts of our
+//application
+const Fruit = mongoose.model('Fruit', fruitSchema)
+```
+- its okay for the model to have an upper Case
+- final part is to export
+```js
+module.exports = Fruit
+```
+
+### Include the model in server.js
+
+```js
+// Import the Fruit model
+const Fruit = require("./models/fruit.js");
+```
+
+
