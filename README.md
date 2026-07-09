@@ -230,7 +230,9 @@ Most Express apps that use MongoDB will follow this pattern:
 - Load dotenv in server.js.
 - Import mongoose.
 - Connect with mongoose.connect(process.env.MONGODB_URI).
-👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼They are below👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼👇🏼 
+
+👇🏼👇🏼👇🏼They are below👇🏼👇🏼👇🏼
+
 ##link database
 ###Install mongoose and dotenv from NPM 
 `npm i mongoose dotenv`
