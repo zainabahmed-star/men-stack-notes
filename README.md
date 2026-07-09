@@ -298,4 +298,114 @@ module.exports = Fruit
 const Fruit = require("./models/fruit.js");
 ```
 
+- we add the content
+still in `server.js`
 
+```js
+//this route will change often
+app.get("/fruits", async (req, res) => {
+  // ❓ create a fruit object
+  const fruitData = {}
+  fruitData.name = 'Strawberry'
+  fruitData.isReadyToEat = false
+
+  // ❓ use a mongoose method to add it to the database 
+
+  //we created a var to send the new fruit 
+  let createdFruit = await Fruit.create(fruitData)
+
+  // we pass the object in the () 👆🏼
+//   its using the creating method to send to the database
+
+  // view the created fruit
+  res.send(fruitData)
+
+});
+
+```
+### To view Data in MonoDB site
+
+- we check mongoDB
+- Projects Overview
+- Browse collection
+- clusters
+<img width="581" height="505" alt="Screenshot 2026-07-09 at 12 35 40 PM" src="https://github.com/user-attachments/assets/ef95af5b-93cc-430a-bfb0-08978d69ed0f" />
+- open fruit_db
+- we can access data
+<img width="1411" height="505" alt="Screenshot 2026-07-09 at 12 36 22 PM" src="https://github.com/user-attachments/assets/d3976601-e030-4570-a3f3-e832775d67a4" />
+
+### How to find all fruits 
+```js
+//this route will change often
+app.get("/fruits", async (req, res) => {
+
+    //use mangoose to find all the fruits 
+  let allFruits = await Fruit.find()
+
+
+  // view the created fruit
+  res.send(allFruits)
+
+});
+```
+
+<img width="1411" height="505" alt="Screenshot 2026-07-09 at 12 47 54 PM" src="https://github.com/user-attachments/assets/1f233a3a-e7d1-4b21-9d8c-7dce2b435805" />
+
+### How to find a specific fruit 
+
+```js
+//this route will change often
+app.get("/fruits", async (req, res) => {
+
+    //use mangoose to find a specific with name fruit
+  let allMangos = await Fruit.find({name: 'Mango'})
+
+
+  // view the created fruit
+  res.send(allMangos)
+
+});
+```
+### To find one 
+you just add `One` after `find`
+```js
+  let allFalses = await Fruit.findOne({isReadyToEat: true})
+```
+
+### To find one and update 
+you just add `One` and `Update`
+
+```js
+ let allFalses = await Fruit.findOneAndUpdate({name: 'Mango'}, {name: "watermelon" },
+  {new: false})
+
+```
+
+### To find one and update by id 
+you just add `ByIdAndUpdate` after `find`
+```js
+let updatedFruit = await Fruit.findOneAndUpdate(
+  { _id: "6a4f6c58c50aacd3bb29b169" },
+  { name: "Green Apple" },
+  { new: true }
+)
+
+//or
+
+const updatedFruit = await Fruit.findByIdAndUpdate(
+    "6a4e80051c3a032571e4ae92",
+    { name: "Green Apple" },
+    { new: true }
+  );
+```
+
+### Delete one Fruit 
+```js
+let deletedFruit = await Fruit.findByIdAndDelete("6a4f6c5b26b63467c4db784b")
+```
+
+
+### Find by Id
+```js
+let findfruitbyid = await Fruit.findById("6a4e80051c3a032571e4ae92")
+```
