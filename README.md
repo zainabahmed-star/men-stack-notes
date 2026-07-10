@@ -409,3 +409,49 @@ let deletedFruit = await Fruit.findByIdAndDelete("6a4f6c5b26b63467c4db784b")
 ```js
 let findfruitbyid = await Fruit.findById("6a4e80051c3a032571e4ae92")
 ```
+
+### We need to add this in server.js to keep track of form or idk for it just to work
+```js
+//above morgan
+app.use(express.urlencoded({ extended: false }));
+```
+
+### To see what we entered in the form 
+
+```js
+app.get("/fruits/new", async (req, res) => {
+  res.render('new.ejs')
+});
+
+// POST /fruits (creates fruit in database)
+app.post('/fruits', (req, res) => {
+res.send(req.body)
+})
+
+```
+its this like 
+```js
+res.send(req.body)
+```
+
+the form in new.ejs
+```ejs
+ <h1> Create a New Fruit </h1>
+    <form action="/fruits" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="isReadyToEat">Ready To Eat?</label>
+        <input type="checkbox" id="isReadyToEat">
+        <button type="submit">Add Fruit</button>
+    </form>
+</body>
+```
+
+to show only the name
+```js
+app.post('/fruits', (req, res) => {
+res.send(req.body.name)
+})
+```
+
