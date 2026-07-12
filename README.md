@@ -455,3 +455,5 @@ res.send(req.body.name)
 })
 ```
 
+### Install method over ride
+`npm i method-override`
