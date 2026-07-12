@@ -456,4 +456,10 @@ res.send(req.body.name)
 ```
 
 ### Install method over ride
-`npm i method-override`
+- in terminal `npm i method-override`
+- add in `server.js` :
+```js
+const methodOverride = require('method-override')
+
+app.use(methodOverride('_method'))
+```
