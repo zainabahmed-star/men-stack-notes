@@ -463,3 +463,16 @@ const methodOverride = require('method-override')
 
 app.use(methodOverride('_method'))
 ```
+
+### MVC in Express
+
+### MEN Stack Session Auth
+- set up and run an Express server integrated with MongoDB,
+-  use environment variables for configuration
+-  include the proper middleware stack to process form requests.
+
+#### Boilerplate express set-up
+- Install packages `npm i express mongoose dotenv ejs morgan method-override`
+- Create your `.env` file at the root level of the repository and include your `MONGODB_URI` connection string variable. `touch .env`
+- It should look like this `MONGODB_URI=<connection-string-from-mongodb-atlas>`
+
